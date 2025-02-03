@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .txt-title {
+        @apply text-teal-300 text-center font-poppins;
+    }
+    .input-style{
+        @apply p-1 text-sm bg-[#202127] rounded-sm outline outline-1 outline-teal-300 text-teal-200 focus:outline-2 focus:outline-teal-100 focus:shadow-md focus:shadow-teal-300/60;
+    }
+    .error-msg{
+        @apply text-red-500 text-xs font-poppins mt-2;
+    }
+}
