@@ -13,3 +13,64 @@
         @apply text-red-500 text-xs font-poppins mt-2;
     }
 }
+
+/* app.css */
+@media (min-width: 768px) { /* Tailwind's 'md' breakpoint */
+  .ml12 .letter {
+    display: inline-block;
+  }
+}
+
+.flicker {
+    animation: textFlicker 3s infinite;
+}
+
+@keyframes textFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: 
+        0px 0px 8px rgba(0, 255, 255, 0.9),
+        0px 0px 16px rgba(0, 255, 255, 0.8),
+        0px 0px 32px rgba(0, 255, 255, 0.75),
+        0px 0px 64px rgba(0, 255, 255, 0.7),
+        0px 0px 128px rgba(0, 255, 255, 0.6);
+  }
+  
+  20%, 22%, 24%, 55% {
+      text-shadow: none;
+  }
+  
+  57%, 60%, 65% {
+      text-shadow: 
+        0px 0px 10px rgba(0, 255, 255, 0.9),
+        0px 0px 20px rgba(0, 255, 255, 0.8),
+        0px 0px 40px rgba(0, 255, 255, 0.75),
+        0px 0px 80px rgba(0, 255, 255, 0.7),
+        0px 0px 160px rgba(0, 255, 255, 0.6);
+  }
+}
+
+
+  .intro .letter {
+    display: inline-block;
+  }
+  
+  .bg-pattern {
+    background-image: url('../../public/svg/graph-paper.svg'); /* Path to your SVG */
+    background-repeat: repeat-x; /* Repeat horizontally */
+    background-size: auto; /* Keep original size */
+    background-position: top; /* Align at the top */
+    height: 100%; /* Cover full height of the section */
+    width: 100%; /* Cover full width of the section */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  -ms-overflow-style: none;
+}

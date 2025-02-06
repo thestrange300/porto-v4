@@ -14,6 +14,8 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 'poppins': ['Poppins'],
+                'ehs': ['Electronic Highway Sign'],
+                'spmono': ['Space Mono'],
             },
         },
     },
