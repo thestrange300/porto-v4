@@ -61,6 +61,7 @@
     background-position: top; /* Align at the top */
     height: 100%; /* Cover full height of the section */
     width: 100%; /* Cover full width of the section */
+    z-index: 0;
 }
 
 ::-webkit-scrollbar {

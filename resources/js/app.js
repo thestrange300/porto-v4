@@ -23,7 +23,7 @@ anime.timeline({})
     translateZ: 0,
     opacity: [0,1],
     easing: "easeOutExpo",
-    duration: 1200,
+    duration: 1700,
     delay: (el, i) => 500 + 30 * i
   });
 
@@ -31,74 +31,138 @@ anime.timeline({})
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Fade In + Slide Up for Image and Text
-  gsap.from("#hero-desc", { 
-      opacity: 0, 
-      y: 50, 
-      duration: 1.5, 
-      ease: "power3.out"
-  });
+    // Initial page load animations
+    gsap.from("#hero-desc", {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power3.out",
+    });
 
-  gsap.from("#socials", { 
-      opacity: 0, 
-      y: 50, 
-      duration: 1.5, 
-      ease: "back.out"
-  });
+    gsap.from("#socials", {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "back.out",
+    });
 
-  gsap.to("#spinning", {
-      rotation: 360,
-      duration: 8,
-      repeat: -1,
-      ease: "linear"
-  })
+    // Main card animation timeline
+    const image = document.getElementById("center-jack");
+    const timeline = gsap.timeline({
+        onComplete: () => {
+            setTimeout(enableImageEffects, 300);
+        },
+    });
 
-  gsap.to("#spinning2", {
-      rotation: -360,
-      duration: 8,
-      repeat: -1,
-      ease: "linear"
-  })
+    // Center card animation sequence
+    timeline
+        .to(image, {
+            rotationY: 360,
+            x: 5,
+            y: -5,
+            z: 5,
+            duration: 0.6,
+            ease: "none",
+        })
+        .to(image, { 
+            rotationY: 0, 
+            scale: 1.4, 
+            duration: 0.4, 
+            ease: "power3.out" 
+        })
+        .to(image, { 
+            scale: 1, 
+            duration: 0.2, 
+            ease: "power2.out" 
+        })
+        .add(() => {
+            // Card sprawl animation
+            gsap.set(".card", {
+                className: 'card md:w-[256px] md:h-auto h-[196px] w-auto absolute',
+                opacity: 1, // Changed from 0.7 to 1
+                scale: 0.9
+            });
 
-  // Border Glow Effect on Text Box
-  gsap.to(".border", {
-      boxShadow: "0 0 10px rgba(255, 255, 255, 0.5)", 
-      repeat: -1, 
-      yoyo: true, 
-      duration: 1.5,
-      ease: "power1.inOut"
-  });
-    
+            // Set initial stacked positions with z-index
+            gsap.set("#card-left1", { x: -15, rotation: -8, scale: 0.95, zIndex: 15 });
+            gsap.set("#card-left2", { x: -30, rotation: -15, scale: 0.9, zIndex: 10 });
+            gsap.set("#card-right1", { x: 15, rotation: 8, scale: 0.95, zIndex: 15 });
+            gsap.set("#card-right2", { x: 30, rotation: 15, scale: 0.9, zIndex: 10 });
+
+            // Animate to final positions
+            gsap.to("#card-left1", { 
+                x: -80, 
+                rotation: -10, 
+                duration: 0.8, 
+                ease: "power3.out" 
+            });
+            gsap.to("#card-left2", { 
+                x: -140, 
+                rotation: -20, 
+                duration: 0.8, 
+                ease: "power3.out" 
+            });
+            gsap.to("#card-right1", { 
+                x: 80, 
+                rotation: 10, 
+                duration: 0.8, 
+                ease: "power3.out" 
+            });
+            gsap.to("#card-right2", { 
+                x: 140, 
+                rotation: 20, 
+                duration: 0.8, 
+                ease: "power3.out" 
+            });
+        });
+
+    // Hover effect functions
+    let isImageEffectsEnabled = false;
+    let rotateX, rotateY;
+
+    function enableImageEffects() {
+        isImageEffectsEnabled = true;
+        image.addEventListener("mouseenter", handleMouseEnter);
+        image.addEventListener("mouseleave", handleMouseLeave);
+        document.addEventListener("mousemove", handleMouseMove);
+
+        rotateX = gsap.quickTo(image, "rotationX", { 
+            duration: 0.1, 
+            ease: "power3.out" 
+        });
+        rotateY = gsap.quickTo(image, "rotationY", { 
+            duration: 0.1, 
+            ease: "power3.out" 
+        });
+        gsap.set(image, { transformPerspective: 800 });
+        simulateInitialHover();
+    }
+
+    function handleMouseEnter() {
+        if (!isImageEffectsEnabled) return;
+        gsap.to(image, { scale: 1.05, duration: 0.3 });
+    }
+
+    function handleMouseLeave() {
+        if (!isImageEffectsEnabled) return;
+        gsap.to(image, { scale: 1, duration: 0.3 });
+    }
+
+    function handleMouseMove(e) {
+        if (!isImageEffectsEnabled) return;
+        const { clientX: mouseX, clientY: mouseY } = e;
+        const { top, left, width, height } = image.getBoundingClientRect();
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
+        const deltaX = (mouseX - centerX) / width;
+        const deltaY = (mouseY - centerY) / height;
+
+        rotateX(-deltaY * 5);
+        rotateY(deltaX * 5);
+    }
+
+    function simulateInitialHover() {
+        gsap.to(image, { scale: 1.05, duration: 0.3 });
+    }
 });
 
-// GSAP Hover Zoom and Mouse Follow Effect
-const image = document.getElementById('center-jack');
-
-image.addEventListener('mouseenter', () => {
-// Zoom in on hover
-gsap.to(image, { scale: 1.05, duration: 0.3 });
-});
-
-image.addEventListener('mouseleave', () => {
-// Reset the scale back
-gsap.to(image, { scale: 1, duration: 0.3 });
-});
-
-// Mouse move effect to simulate the 3D flexing
-document.addEventListener('mousemove', (e) => {
-const { clientX: mouseX, clientY: mouseY } = e;
-const { top, left, width, height } = image.getBoundingClientRect();
-
-const centerX = left + width / 2;
-const centerY = top + height / 2;
-
-const deltaX = (mouseX - centerX) / width;
-const deltaY = (mouseY - centerY) / height;
-
-gsap.to(image, {
-rotationX: -deltaY * 5, // Adjust the intensity of the 3D flex
-rotationY: deltaX * 5,  // Adjust the intensity of the 3D flex
-transformPerspective: 800, // Adds perspective
-duration: 0.1,
-});
-});
