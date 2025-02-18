@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function simulateInitialHover() {
-        gsap.to(image, { scale: 1.05, duration: 0.3 });
+        gsap.to(image, { scale: 1.03, duration: 0.3 });
     }
 });
 
