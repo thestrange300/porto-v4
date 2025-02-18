@@ -166,3 +166,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// ---------- Modal Content ------------
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modalTriggers = document.querySelectorAll(".modal-trigger");
+    const modals = document.querySelectorAll(".modal");
+    const closeModalButtons = document.querySelectorAll(".close-modal");
+
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener("click", function () {
+            const modalId = this.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "flex";
+                gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" });
+            }
+        });
+    });
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const modal = this.closest(".modal");
+            gsap.to(modal, { opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => {
+                modal.style.display = "none";
+            }});
+        });
+    });
+
+    modals.forEach(modal => {
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                gsap.to(modal, { opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => {
+                    modal.style.display = "none";
+                }});
+            }
+        });
+    });
+});
+

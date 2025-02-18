@@ -129,7 +129,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-5 grid-rows-2 h-fit w-full md:w-[80%] border bg-[#080808] border-gray-500 rounded-lg p-6 border-opacity-30 gap-x-4 gap-y-4">
-                        <div class="relative flex justify-center items-center w-full h-64 col-span-1 md:col-span-3 row-span-1 bg-black border-[1px] border-gray-500 border-opacity-30 rounded-lg overflow-hidden">
+                        <div data-modal="modal1" class="modal-trigger relative flex justify-center items-center w-full h-64 col-span-1 md:col-span-3 row-span-1 bg-black border-[1px] border-gray-500 border-opacity-30 rounded-lg overflow-hidden cursor-pointer">
                             <img src="{{ asset('img/projects/test.png') }}" alt="Diao Channnn" class="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105">
                             <div class="w-full h-2/6 absolute bottom-0 bg-black rounded-b-lg opacity-80 p-4">
                                 <div class="flex h-full flex-col justify-center">
@@ -143,7 +143,7 @@
                             <div class="w-full h-2/6 absolute bottom-0 bg-black rounded-b-lg opacity-80 p-4">
                                 <div class="flex h-full flex-col justify-center">
                                     <p class="font-ehs text-lg">SDN Bubutan IV</p>
-                                    <p class="font-spmono text-xs">AI-powered CV reviewer that provides instant professional feedback.</p>
+                                    <p class="font-spmono text-xs">Sleek and modern company profile website with custom CMS and dashboard.</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                                 <div class="w-full h-2/6 absolute bottom-0 bg-black rounded-b-lg opacity-80 p-4">
                                     <div class="flex h-full flex-col justify-center">
                                         <p class="font-ehs text-lg">Thesis</p>
-                                        <p class="font-spmono text-xs">AI-powered CV reviewer that provides.</p>
+                                        <p class="font-spmono text-xs">Classification of Pneumonia with Image Enhancement</p>
                                     </div>
                                 </div>
                             </div>
@@ -164,8 +164,8 @@
                                 <img src="{{ asset('img/projects/test4.png') }}" alt="Diao Channnn" class="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105">
                                 <div class="w-full h-2/6 absolute bottom-0 bg-black rounded-b-lg opacity-80 p-4">
                                     <div class="flex h-full flex-col justify-center">
-                                        <p class="font-ehs text-lg">MTQMN</p>
-                                        <p class="font-spmono text-xs">AI-powered CV reviewer that provides.</p>
+                                        <p class="font-ehs text-lg">Qurena</p>
+                                        <p class="font-spmono text-xs">Quiz-based game on Qur'anic knowledge for team competition.</p>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                 <div class="w-full h-2/6 absolute bottom-0 bg-black rounded-b-lg opacity-80 p-4">
                                     <div class="flex h-full flex-col justify-center">
                                         <p class="font-ehs text-lg">Amerta</p>
-                                        <p class="font-spmono text-xs">AI-powered CV reviewer that provides.</p>
+                                        <p class="font-spmono text-xs">UI/UX Design for AMERTA 2022 Website.</p>
                                     </div>
                                 </div>
                             </div>
@@ -340,17 +340,17 @@
                         </div>
 
                         <div class="h-[0.5px] w-full inset-x-4 bg-gray-500 bg-opacity-30"></div>
-                        
+                        <p class="text-base font-ehs text-center md:text-left"> On Learning</p>
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4 md:gap-x-4 md:gap-y-4">
                             <x-index.tech-comp :showIcon="true">
                                 <x-slot:title>ChatGPT</x-slot:title>
                                 <x-slot:icon_path><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></x-slot:icon_path>
-                                <x-slot:description>Simple App</x-slot:description>
+                                <x-slot:description>Chatbot Integration</x-slot:description>
                             </x-index.tech-comp>
                             <x-index.tech-comp :showIcon="true">
                                 <x-slot:title>Gemini</x-slot:title>
                                 <x-slot:icon_path><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></x-slot:icon_path>
-                                <x-slot:description>Simple App</x-slot:description>
+                                <x-slot:description>Chatbot Integration</x-slot:description>
                             </x-index.tech-comp>
                             <x-index.tech-comp :showIcon="true">
                                 <x-slot:title>SQLite</x-slot:title>
@@ -362,7 +362,9 @@
                     </div>
 
                 </main>
-    
+
+                
+                
             </div>
     
             <aside class="overflow-y-hidden w-0 md:w-[12.5%] sticky top-0 z-20 block bg-black md:border-l-[1px] border-gray-700 border-opacity-70">
@@ -372,10 +374,35 @@
                     </div>
                 </div> --}}
             </aside>
-            
+
         </div>
     </section>
+
+    <div id="modal1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center opacity-0">
+        <div class="border bg-[#080808] border-gray-500 rounded-lg p-6 border-opacity-30 w-[90%] md:w-[70%] max-h-[750px] overflow-y-scroll relative">
+            <button class="close-modal absolute top-3 right-3 text-white text-2xl">&times;</button>
+            <div class="flex flex-col gap-y-4">
+                <h2 class="text-xl font-ehs text-white">Pena Pandai</h2>
+                <div>
+                    <img src="{{ asset('img/projects/test3.png') }}" alt="Pena Pandai Image 1" class="h-60 w-auto object-cover rounded-lg">
+                </div>
+                <div class="flex gap-x-1">
+                    <p class="bg-[#141415] border-white border-[0.5px] border-opacity-30 rounded-full px-2 py-1 bottom-2 text-[11px] text-white font-spmono">Laravel</p>
+                    <p class="bg-[#141415] border-white border-[0.5px] border-opacity-30 rounded-full px-2 py-1 bottom-2 text-[11px] text-white font-spmono">Javascript</p>
+                    <p class="bg-[#141415] border-white border-[0.5px] border-opacity-30 rounded-full px-2 py-1 bottom-2 text-[11px] text-white font-spmono">Tailwind</p>
+                    <p class="bg-[#141415] border-white border-[0.5px] border-opacity-30 rounded-full px-2 py-1 bottom-2 text-[11px] text-white font-spmono">ChatGPT</p>
+                    <p class="bg-[#141415] border-white border-[0.5px] border-opacity-30 rounded-full px-2 py-1 bottom-2 text-[11px] text-white font-spmono">Gemini</p>
+                </div>
+                <button class="ui-btn w-48">
+                    <span>
+                      Visit Website 
+                    </span>
+                </button>
+                <p class="font-spmono text-xs md:text-sm text-neutral-400">Pena Pandai is an AI platform that helps primary school teachers create automated questions with a single click. Users can select criteria, add subtopics, and instantly get the results. Easy to use without technical expertise, the service is free as a portfolio of AI innovations in education.</p>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>
-
-

@@ -16,7 +16,7 @@
             <div class="w-min-96 w-[40%] p-8 bg-[#202127] transition-all outline outline-1 outline-teal-300 rounded shadow-lg shadow-gray-700 relative">
                 <div class="flex justify-center">
                     <div class="flex flex-col gap-y-4 ">
-                        <h4 class="txt-title text-left font-bold text-xl text-center">Login</h4>
+                        <h4 class="txt-title text-left font-bold text-xl">Login</h4>
                         <div class="flex flex-col max-w-48">
                             <label for="username" class="txt-title text-sm text-left">Username</label>
                             <input type="text" name="username" class="input-style">
@@ -26,7 +26,7 @@
                         </div>
                         <div class="flex flex-col max-w-48">
                             <label for="password" class="txt-title text-sm text-left">Credential</label>
-                            <input type="text" name="password" class="input-style">
+                            <input type="password" name="password" class="input-style">
                             @error('url')
                             <p class="error-msg">{{ $message }}</p>
                             @enderror
